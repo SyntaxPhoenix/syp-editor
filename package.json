@@ -1,0 +1,35 @@
+{
+  "name": "@syntaxphoenix/syp-editor",
+  "version": "0.0.1",
+  "description": "A wrapper and toolbar for tiptap within VanillaJS",
+  "scripts": {
+    "build-css": "sass scss/editor.scss dist/editor.css && sass scss/editor.scss dist/editor.min.css --style=compressed",
+    "build": "tsup && pnpm run build-css"
+  },
+  "repository": {
+    "url": "https://github.com/SyntaxPhoenix/syp-editor"
+  },
+  "homepage": "https://github.com/SyntaxPhoenix/syp-editor",
+  "bugs": "https://github.com/SyntaxPhoenix/syp-editor/issues",
+  "keywords": [
+    "tiptap",
+    "wysiwyg",
+    "editor"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "author": {
+    "name": "SyntaxPhoenix IT-Solutions",
+    "url": "https://syntaxphoenix.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.94.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@tiptap/core": "^3.13.0"
+  }
+}

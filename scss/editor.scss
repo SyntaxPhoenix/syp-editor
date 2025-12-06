@@ -1,0 +1,144 @@
+.syp-editor-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .syp-editor-toolbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0.5rem 1.0rem;
+        border-bottom: 1px solid #ccccd1;
+        width: 100%;
+        font-size: 1.0rem;
+
+        div.syp-editor-toolbar-group {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .syp-editor-content {
+        width: 100%;
+        padding: 1.0rem;
+
+        .tiptap.ProseMirror {
+            width: 100%;
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+
+    .syp-editor-content > div {
+        width: 100%;
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
+
+button.syp-editor-toolbar-item,
+button.syp-editor-toolbar-dropdown-toggle,
+button.syp-editor-toolbar-link-submit-btn,
+button.syp-editor-toolbar-link-delete-btn {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    height: 2.0rem;
+    width: 2.0rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.25s;
+    color: #333333;
+
+    &:hover:enabled,
+    &.is-active {
+        background-color: #ccccd1;
+    }
+}
+
+div.syp-editor-toolbar-separator {
+    height: 2.0rem;
+    background-color: #ccccd1;
+    width: 1px;
+    margin: 0 0.5rem;
+}
+
+.syp-editor-toolbar-dropdown {
+    float: left;
+    overflow: hidden;
+
+    .syp-editor-toolbar-dropdown-caret {
+        width: 2.5rem;
+
+        &::after {
+            display: inline-block;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+        }
+    }
+
+    .syp-editor-toolbar-dropdown-content {
+        width: fit-content;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 0.5rem 1.0rem 0 rgba(0,0,0,0.2);
+        z-index: 1;
+        padding: 0.5rem 0.5rem;
+        border-radius: 0.5rem;
+
+        button.syp-editor-toolbar-item,
+        button.syp-editor-toolbar-dropdown-toogle {
+            width: 100%;
+            margin: 0.25rem 0;
+            display: block;
+            text-align: left;
+        }
+
+        div.syp-editor-toolbar-separator {
+            width: 100%;
+            height: 1px;
+            margin: 0.5rem 0;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+}
+
+.syp-editor-toolbar-link-content.show {
+    display: flex !important;
+    flex-direction: row;
+
+    .syp-editor-toolbar-link-input {
+        border: 0;
+        background-color: transparent;
+    }
+
+    .syp-editor-toolbar-link-divider {
+        width: 1px;
+        height: 2.0rem;
+        background-color: #ccccd1;
+        margin: 0 0.5rem;
+        display: block;
+    }
+
+    button.syp-editor-toolbar-link-submit-btn {
+        margin-left: 0.5rem;
+    }
+}
