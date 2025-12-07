@@ -52,6 +52,7 @@ export class SypEditorDropdown implements ToolbarItem {
         }
 
         dropdownButton.addEventListener('click', (event) => {
+            event.preventDefault();
             let container = this.element!.querySelector('.syp-editor-toolbar-dropdown-content');
             container!.classList.toggle('show');
         });

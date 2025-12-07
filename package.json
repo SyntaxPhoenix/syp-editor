@@ -1,6 +1,6 @@
 {
   "name": "@syntaxphoenix/syp-editor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A wrapper and toolbar for tiptap within VanillaJS",
   "scripts": {
     "build-css": "sass scss/editor.scss dist/editor.css && sass scss/editor.scss dist/editor.min.css --style=compressed",
