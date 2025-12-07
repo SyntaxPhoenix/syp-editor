@@ -66,6 +66,7 @@ export class SypEditorLink {
         }
 
         dropdownButton.addEventListener('click', (event) => {
+            event.preventDefault();
             let container = this.element!.querySelector('.syp-editor-toolbar-dropdown-content');
             container!.classList.toggle('show');
         });
@@ -87,6 +88,7 @@ export class SypEditorLink {
             this.sypEditor.getIconManager().addIcon(submitBtn, this.iconProviderSubmitBtn, this.iconSubmitBtn, this.iconAttributesSubmitBtn);
         }
         submitBtn.addEventListener('click', (event) => {
+            event.preventDefault();
             if (!submitBtn.disabled) {
                 // @ts-ignore
                 this.editor.chain().focus()['setLink']({ href: input.value }).run();
@@ -106,6 +108,7 @@ export class SypEditorLink {
             this.sypEditor.getIconManager().addIcon(deleteBtn, this.iconProviderDeleteBtn, this.iconDeleteBtn, this.iconAttributesDeleteBtn);
         }
         deleteBtn.addEventListener('click', (event) => {
+            event.preventDefault();
             if (!deleteBtn.disabled) {
                 // @ts-ignore
                 this.editor.chain().focus()['unsetLink'].run();
