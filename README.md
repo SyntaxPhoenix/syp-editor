@@ -58,7 +58,7 @@ In addition the wrapper takes apart the nasty setup-process of setting up the bu
 <!-- GETTING STARTED -->
 ## Usage
 
-```php
+```javascript
 import { SypEditor, SypEditorLinkExtension } from '@syntaxphoenix/syp-editor';
 
 const element = document.querySelector('#editor');
@@ -146,7 +146,7 @@ A more detailed guide on the setup of SypEditor can be found [here](https://gith
 
 ### Installation
 
-```
+```bash
 npm install @syntaxphoenix/syp-editor
 ```
 
