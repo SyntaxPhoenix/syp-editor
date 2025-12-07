@@ -143,7 +143,7 @@ export class SypEditorLink {
         let input = this.element!.querySelector('.syp-editor-toolbar-link-input');
 
         // @ts-ignore
-        if (editor.can().chain().focus()['unsetLink'].run()) {
+        if (editor.can().chain().focus()['unsetLink']().run()) {
             deleteBtn!.removeAttribute("disabled");
         } else {
             deleteBtn!.setAttribute("disabled", "true");

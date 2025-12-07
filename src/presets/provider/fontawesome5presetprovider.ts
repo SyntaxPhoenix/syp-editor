@@ -212,12 +212,12 @@ export class Fontawesome5PresetProvider implements PresetProvider {
     }
 
     public getNames(): string[] {
-        return Object.keys(this.presets);
+        return Array.from(this.presets.keys());
     }
 
     public getPreset(name: string, attributes: any = {}): ConfigurationEntry {
-        if (!(this.presets.has(name))) {
-            throw new Error("SYP-Editor has no preset with the name " + name + "! Did you forget to add a preset provider?");
+        if (!this.presets.has(name)) {
+            throw new Error("Fontawesome 5 has no preset with the name " + name + "! Did you forget to add a preset provider?");
         }
 
         return this.presets.get(name)!;

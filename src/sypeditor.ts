@@ -27,11 +27,11 @@ export class SypEditor {
     private wrapper: HTMLElement|null;
     private content: HTMLElement|null;
 
-    constructor({ element, editor, configuration }: {
-        element: HTMLElement;
-        editor: Editor;
+    constructor(
+        element: HTMLElement,
+        editor: Editor,
         configuration: Partial<SypEditorConfiguration>
-    }) {
+    ) {
         this.element = element;
         this.editor = editor;
         this.configuration = configuration;
@@ -124,7 +124,7 @@ export class SypEditor {
                     throw new Error("The extension for the element '" + child.type + "' does not support that the element can be added to groups");
                 }
             } else {
-                 throw new Error("Only button,separator and dropdown-elements can be used within a group.");
+                throw new Error("Only button,separator and dropdown-elements can be used within a group.");
             }
         }
 

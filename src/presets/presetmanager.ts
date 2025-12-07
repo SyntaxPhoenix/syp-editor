@@ -18,6 +18,7 @@ export class PresetManager {
 
     private initialize() {
         this.presetProviders.push(new Fontawesome5PresetProvider());
+
         for (const presetProvider of this.presetProviders) {
             for (const presetName of presetProvider.getNames()) {
                 this.presets.set(presetName, presetProvider);
@@ -34,19 +35,20 @@ export class PresetManager {
         let newItems = [];
         for (let item of items) {
             if (item.type !== 'preset') {
-                if (item instanceof ConfigurationEntryWithElements) {
-                    item.elements = this.renewItems(item.elements);
+                if (Object.hasOwn(item, 'elements')) {
+                    (item as ConfigurationEntryWithElements).elements = this.renewItems((item as ConfigurationEntryWithElements).elements);
                 }
                 newItems.push(item);
             } else {
-                newItems.push(this.getPreset((item as PresetConfigurationEntry).name, (item as PresetConfigurationEntry).attributes ?? {}));
+                const itemNew = this.getPreset((item as PresetConfigurationEntry).name, (item as PresetConfigurationEntry).attributes ?? {});
+                newItems.push(itemNew);
             }
         }
         return newItems;
     }
 
     public getPreset(name: string, attributes: any = {}): ConfigurationEntry {
-        if (!(this.presets.has(name))) {
+        if (!this.presets.has(name)) {
             throw new Error("SYP-Editor has no preset with the name " + name + "! Did you forget to add a preset provider?");
         }
 
