@@ -182,7 +182,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-[@SyntaxPhoenix](https://twitter.com/SyntaxPhoenix) - support@syntaxphoenix.com
+[@SyntaxPhoenix](https://syntaxphoenix.com/contact) - support@syntaxphoenix.com
 
 Project Link: [https://github.com/SyntaxPhoenix/syp-editor](https://github.com/SyntaxPhoenix/syp-editor)
 
